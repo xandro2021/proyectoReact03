@@ -21,6 +21,12 @@ npm run dev
 #+end_src
 
 * Dependencies
-
+** Styles Components (Emotion React & Styled)
++ It is basically an alternative to style components. It has the same benefit of tailwind regarding once you don't need the component, you can get rid of it altogether with its styles. So the project won't have unused styles.
++ The disadvantage is that the styles will be altogether with the jsx files. So the code will be less clean, similar to tailwind.
+*** Installation
+#+begin_src bash
+npm install @emotion/react @emotion/styled
+#+end_src
 
 * Deployment
