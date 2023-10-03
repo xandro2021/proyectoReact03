@@ -29,4 +29,9 @@ npm run dev
 npm install @emotion/react @emotion/styled
 #+end_src
 
+* Create your own Hook
++ It is an alternative to a helper file that contains functions you will usually need in your projects
++ It brings some react benefits over a helper files like the use of States, Effects, keep a function value in persistent monde, among others react benefits.
++ It is similar to your regular react components but it doesn't return html, instead it returns an object, array, funtion or other regular javascript values
+
 * Deployment
