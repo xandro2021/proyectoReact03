@@ -1,4 +1,4 @@
-#+title: React & Vite Project 02
+#+title: React & Vite Project 03
 
 * React + Vite
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -35,3 +35,4 @@ npm install @emotion/react @emotion/styled
 + It is similar to your regular react components but it doesn't return html, instead it returns an object, array, funtion or other regular javascript values
 
 * Deployment
+[[https://incomparable-biscuit-c11bac.netlify.app/][Link to deployment]]
