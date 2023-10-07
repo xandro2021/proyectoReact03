@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import styled from '@emotion/styled';
 import Formulario from './components/Formulario';
+import Resultado from './components/Resultado';
 import ImagenCripto from './img/imagen-criptos.png';
 
 const Contenedor = styled.div`
@@ -42,13 +43,30 @@ const Heading = styled.h1`
 `;
 
 function App() {
-
+  // Obtengo info del hijo usando el state que contiene valores moneda y crypto
   const [monedas, setMonedas] = useState({});
+  const [resultado, setResultado] = useState({});
 
   useEffect(() => {
+
     if (Object.keys(monedas).length > 0) {
-      alert(monedas.moneda);
+
+      const cotizarCripto = async () => {
+
+        const { moneda, criptoMoneda } = monedas;
+
+        const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptoMoneda}&tsyms=${moneda}`;
+
+        const respuesta = await fetch(url);
+        const resultado = await respuesta.json();
+
+        setResultado(resultado.DISPLAY[criptoMoneda][moneda]);
+
+      };
+
+      cotizarCripto();
     }
+
   }, [monedas]);
 
 
@@ -66,6 +84,9 @@ function App() {
         <Formulario
           setMonedas={setMonedas}
         />
+
+        {resultado.PRICE && <Resultado resultado={resultado} />}
+
       </div>
 
     </Contenedor>
